@@ -1,15 +1,63 @@
 <template>
-  <div id="app">
+  <div>
+    <header class="navbar container">
+      <section class="navbar-section">
+        <router-link class="btn btn-link" to="/orders">列表</router-link>
+        <router-link v-show="showAdd" class="btn btn-link" to="/order/create">添加</router-link>
+      </section>
+    </header>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'carrepair'
+    name: 'carrepair',
+    computed: {
+      showAdd: function() {
+        return this.$route.path === '/orders';
+      }
+    }
   }
 </script>
 
 <style>
-  /* CSS */
+  @import "~spectre.css/dist/spectre.min.css";
+  @import "~spectre.css/dist/spectre-exp.min.css";
+  @import "~spectre.css/dist/spectre-icons.min.css";
+
+  .column {
+    padding: .4rem
+  }
+  header {
+    margin-top: 50px;
+  }
+  table {
+    border-collapse: collapse;
+  }
+  .table-bordered {
+    border: 1px solid #dee2e6;
+  }
+  .table-bordered td, .table-bordered th {
+    border: 1px solid #dee2e6;
+  }
+  .column .table tr td {
+    height: 41px;
+  }
+  .table td, .table th {
+    padding: .3rem .4rem;
+  }
+  .container {
+    width: 1000px;
+  }
+  a {
+    text-decoration: underline;
+  }
+  textarea {
+    resize: none;
+  }
+  .form-checkbox .form-icon, .form-radio .form-icon {
+    right: 0;
+    left: auto;
+  }
 </style>
