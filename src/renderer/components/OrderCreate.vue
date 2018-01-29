@@ -127,98 +127,98 @@
                 <div class="form-group d-inline-block">
                   <label class="form-checkbox">
                     机油：
-                    <input type="checkbox" :checked="order.jianyi.jiyou">
+                    <input type="checkbox" v-model="order.jianyi.jiyou">
                     <i class="form-icon"></i>
                   </label>
                 </div>
                 <div class="form-group d-inline-block">
                   <label class="form-checkbox">
                     机滤：
-                    <input type="checkbox" :checked="order.jianyi.jilv">
+                    <input type="checkbox" v-model="order.jianyi.jilv">
                     <i class="form-icon"></i>
                   </label>
                 </div>
                 <div class="form-group d-inline-block">
                   <label class="form-checkbox">
                     空滤：
-                    <input type="checkbox" :checked="order.jianyi.konglv">
+                    <input type="checkbox" v-model="order.jianyi.konglv">
                     <i class="form-icon"></i>
                   </label>
                 </div>
                 <div class="form-group d-inline-block">
                   <label class="form-checkbox">
                     空调滤：
-                    <input type="checkbox" :checked="order.jianyi.kongtiaolv">
+                    <input type="checkbox" v-model="order.jianyi.kongtiaolv">
                     <i class="form-icon"></i>
                   </label>
                 </div>
                 <div class="form-group d-inline-block">
                   <label class="form-checkbox">
                     气油滤：
-                    <input type="checkbox" :checked="order.jianyi.qiyoulv">
+                    <input type="checkbox" v-model="order.jianyi.qiyoulv">
                     <i class="form-icon"></i>
                   </label>
                 </div>
                 <div class="form-group d-inline-block">
                   <label class="form-checkbox">
                     刹车油：
-                    <input type="checkbox" :checked="order.jianyi.shacheyou">
+                    <input type="checkbox" v-model="order.jianyi.shacheyou">
                     <i class="form-icon"></i>
                   </label>
                 </div>
                 <div class="form-group d-inline-block">
                   <label class="form-checkbox">
                     助力油：
-                    <input type="checkbox" :checked="order.jianyi.zhuliyou">
+                    <input type="checkbox" v-model="order.jianyi.zhuliyou">
                     <i class="form-icon"></i>
                   </label>
                 </div>
                 <div class="form-group d-inline-block">
                   <label class="form-checkbox">
                     变速箱油：
-                    <input type="checkbox" :checked="order.jianyi.biansuxiangyou">
+                    <input type="checkbox" v-model="order.jianyi.biansuxiangyou">
                     <i class="form-icon"></i>
                   </label>
                 </div>
                 <div class="form-group d-inline-block">
                   <label class="form-checkbox">
                     正时套装：
-                    <input type="checkbox" :checked="order.jianyi.zhengshitaozhuang">
+                    <input type="checkbox" v-model="order.jianyi.zhengshitaozhuang">
                     <i class="form-icon"></i>
                   </label>
                 </div>
                 <div class="form-group d-inline-block">
                   <label class="form-checkbox">
                     防冻液：
-                    <input type="checkbox" :checked="order.jianyi.fangdongye">
+                    <input type="checkbox" v-model="order.jianyi.fangdongye">
                     <i class="form-icon"></i>
                   </label>
                 </div>
                 <div class="form-group d-inline-block">
                   <label class="form-checkbox">
                     刹车片：
-                    <input type="checkbox" :checked="order.jianyi.shachepian">
+                    <input type="checkbox" v-model="order.jianyi.shachepian">
                     <i class="form-icon"></i>
                   </label>
                 </div>
                 <div class="form-group d-inline-block">
                   <label class="form-checkbox">
                     清洗节气门：
-                    <input type="checkbox" :checked="order.jianyi.qingxijieqimen">
+                    <input type="checkbox" v-model="order.jianyi.qingxijieqimen">
                     <i class="form-icon"></i>
                   </label>
                 </div>
                 <div class="form-group d-inline-block">
                   <label class="form-checkbox">
                     清洗喷油嘴：
-                    <input type="checkbox" :checked="order.jianyi.qingxipenyouzui">
+                    <input type="checkbox" v-model="order.jianyi.qingxipenyouzui">
                     <i class="form-icon"></i>
                   </label>
                 </div>
                 <div class="form-group d-inline-block">
                   <label class="form-checkbox">
                     清洗三元催化：
-                    <input type="checkbox" :checked="order.jianyi.qingxisanyuancuihua">
+                    <input type="checkbox" v-model="order.jianyi.qingxisanyuancuihua">
                     <i class="form-icon"></i>
                   </label>
                 </div>

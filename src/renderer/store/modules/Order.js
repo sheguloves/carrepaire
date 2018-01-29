@@ -1,8 +1,12 @@
 import lowdb from 'lowdb';
 import shortid from 'shortid';
 
+import path from 'path'
+import { remote } from 'electron'
+
 const FileSync = require('lowdb/adapters/FileSync');
-const adapter = new FileSync('db.json');
+const fileName = path.join(remote.app.getPath('userData'), '/db.json');
+const adapter = new FileSync(fileName);
 const db = lowdb(adapter);
 
 // Set some defaults
