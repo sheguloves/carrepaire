@@ -5,8 +5,8 @@ import path from 'path'
 import { remote } from 'electron'
 
 const FileSync = require('lowdb/adapters/FileSync');
-const fileName = path.join(remote.app.getPath('userData'), '/db.json');
-const adapter = new FileSync(fileName);
+// const fileName = path.join(remote.app.getPath('userData'), '/db.json');
+const adapter = new FileSync('db.json');
 const db = lowdb(adapter);
 
 // Set some defaults
