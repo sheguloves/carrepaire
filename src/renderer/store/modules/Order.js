@@ -1,8 +1,11 @@
 import lowdb from 'lowdb';
 import shortid from 'shortid';
 
-import path from 'path'
-import { remote } from 'electron'
+import path from 'path';
+import { remote } from 'electron';
+import fs from 'fs';
+
+const dialog = remote.dialog;
 
 const FileSync = require('lowdb/adapters/FileSync');
 // const fileName = path.join(remote.app.getPath('userData'), '/db.json');
@@ -51,6 +54,45 @@ const actions = {
     commit({
       type:'UPDATE_ORDER',
       orders: db.get('orders').value()
+    });
+  },
+  daochushuju () {
+    let content = db.get('orders').value();
+    dialog.showSaveDialog((fileName) => {
+      if (fileName === undefined){
+        return;
+      }
+      // fileName is a string that contains the path and filename created in the save file dialog.
+      fs.writeFile(fileName, JSON.stringify(content), (err) => {
+        if(err){
+        }
+      });
+    });
+  },
+  daorushuju ({ commit }) {
+    dialog.showOpenDialog((fileNames) => {
+      // fileNames is an array that contains all the selected
+      if(!fileNames || fileNames.length === 0){
+        return;
+      }
+
+      fs.readFile(fileNames[0], 'utf-8', (err, data) => {
+        if(err){
+          return;
+        }
+        var content = JSON.parse(data);
+        if (content && content.length > 0) {
+          content.forEach(function(item) {
+            db.get('orders')
+              .push({ ...item, id: shortid.generate() })
+              .write();
+          });
+          commit({
+            type:'UPDATE_ORDER',
+            orders: db.get('orders').value()
+          });
+        }
+      });
     });
   }
 };

@@ -5,6 +5,10 @@
         <router-link class="btn btn-link" to="/orders">列表</router-link>
         <router-link v-show="showAdd" class="btn btn-link" to="/order/create">添加</router-link>
       </section>
+      <section class="navbar-section">
+        <a class="btn btn-link" v-on:click="daochushuju">导出数据</a>
+        <a class="btn btn-link" v-on:click="daorushuju">导入数据</a>
+      </section>
     </header>
     <router-view></router-view>
   </div>
@@ -16,6 +20,14 @@
     computed: {
       showAdd: function() {
         return this.$route.path === '/orders';
+      }
+    },
+    methods: {
+      daochushuju: function() {
+        this.$store.dispatch('daochushuju');
+      },
+      daorushuju: function() {
+        this.$store.dispatch('daorushuju');
       }
     }
   }
